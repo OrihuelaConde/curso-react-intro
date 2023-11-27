@@ -8,10 +8,20 @@ import './TodoCounter.css';
 // }
 
 function TodoCounter({ total, completed }) {
+    const allCompleted = total == completed;
+
     return (
-        //<h1 style={estilos}>
+        !allCompleted ? 
+
+        //<h1 style={estilos}>        
         <h1 className="TodoCounter">
             Has completado <span>{completed}</span> de <span>{total}</span> TODOs
+        </h1>
+
+        :
+
+        <h1 className="TodoCounter">
+            Has completado todas tus tareas 🎊
         </h1>
     );
 }
