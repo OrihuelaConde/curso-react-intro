@@ -8,7 +8,7 @@ import './TodoCounter.css';
 // }
 
 function TodoCounter({ total, completed }) {
-    const allCompleted = total == completed;
+    const allCompleted = total === completed;
 
     return (
         !allCompleted ? 
