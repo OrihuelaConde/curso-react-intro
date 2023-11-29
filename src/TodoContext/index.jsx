@@ -24,6 +24,15 @@ function TodoProvider({ children }) {
         }
     );
 
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text: text,
+            completed: false
+        });
+        saveTodos(newTodos);
+    };
+
     const completeTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
@@ -52,10 +61,11 @@ function TodoProvider({ children }) {
                 loading,
                 error,
                 searchedTodos,
+                addTodo,
                 completeTodo,
                 deleteTodo,
                 openModal,
-                setOpenModal
+                setOpenModal                
             }
         }>
             {children}
