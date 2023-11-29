@@ -1,5 +1,15 @@
 import React from 'react';
 
+// localStorage.removeItem('TODOS_V1');
+
+// const defaultTodos = [
+//   { text: "Ir de compras", completed: true },
+//   { text: "Hacer las compras", completed: false },
+//   { text: "Pagar las compras", completed: false },
+// ];
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+
 function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue);
   const [loading, setLoading] = React.useState(true);
