@@ -4,6 +4,8 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
 
 function AppUI({
     completedTodos,
@@ -26,8 +28,8 @@ function AppUI({
             />
 
             <TodoList>
-                {loading && <p>Cargando...</p>}
-                {error && <p>Algo pasó 😶‍🌫️</p>}
+                {loading && <TodosLoading />}
+                {error && <TodosError />}
                 {searchedTodos.map(todo => (
                     <TodoItem
                         key={todo.text}
