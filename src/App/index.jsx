@@ -31,16 +31,16 @@ function App() {
   return (
     <React.Fragment>
 
-      <TodoHeader>
+      <TodoHeader
+        loading={loading}
+      >
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
-          loading={loading}
         />
         <TodoSearch
           searchValue={searchValue}
           setSearchValue={setSearchValue}
-          loading={loading}
         />
       </TodoHeader>
 
@@ -62,15 +62,15 @@ function App() {
             searchText={searchValue}
           />
         }
-        // render={todo => (
-        //   <TodoItem
-        //     key={todo.text}
-        //     text={todo.text}
-        //     completed={todo.completed}
-        //     onComplete={() => completeTodo(todo.text)}
-        //     onDelete={() => deleteTodo(todo.text)}
-        //   />
-        // )}
+      // render={todo => (
+      //   <TodoItem
+      //     key={todo.text}
+      //     text={todo.text}
+      //     completed={todo.completed}
+      //     onComplete={() => completeTodo(todo.text)}
+      //     onDelete={() => deleteTodo(todo.text)}
+      //   />
+      // )}
       >
         {todo => (
           <TodoItem
