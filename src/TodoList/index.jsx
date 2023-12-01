@@ -6,10 +6,13 @@ function TodoList(props) {
     return (
         <section className="TodoList-container">
             {props.error && props.onError()}
+
             {props.loading && props.onLoading()}
+
             {(!!props.totalTodos && !props.searchedTodos?.length) && props.onEmptySearchResult()}
+
             <ul className="TodoList">
-                {props.searchedTodos.map(renderFunc)}
+                {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
             </ul>
         </section>
     );
