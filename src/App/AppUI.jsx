@@ -9,11 +9,16 @@ import { TodosError } from '../TodosError';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm'
+import { TodoHeader } from '../TodoHeader';
 
 function AppUI() {
     const {
         loading,
         error,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
         searchedTodos,
         completeTodo,
         deleteTodo,
@@ -24,8 +29,16 @@ function AppUI() {
     return (
         <React.Fragment>
 
-            <TodoCounter />
-            <TodoSearch />
+            <TodoHeader>
+                <TodoCounter
+                    totalTodos={totalTodos}
+                    completedTodos={completedTodos}
+                />
+                <TodoSearch
+                    searchValue={searchValue}
+                    setSearchValue={setSearchValue}
+                />
+            </TodoHeader>
 
             <TodoList>
                 {loading && (

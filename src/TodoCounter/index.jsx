@@ -1,5 +1,4 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './TodoCounter.css';
 
 // const estilos = {
@@ -9,12 +8,11 @@ import './TodoCounter.css';
 //     padding: '48'
 // }
 
-function TodoCounter() {
-    const {
-        totalTodos,
-        completedTodos
-    } = React.useContext(TodoContext)
-
+function TodoCounter({
+    totalTodos,
+    completedTodos
+}
+) {
     const allCompleted = totalTodos === completedTodos;
 
     return (
