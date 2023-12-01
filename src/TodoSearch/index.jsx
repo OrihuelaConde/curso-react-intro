@@ -3,16 +3,19 @@ import './TodoSearch.css';
 
 function TodoSearch({
     searchValue,
-    setSearchValue
+    setSearchValue,
+    loading
 }) {
     return (
         <input
-            placeholder="Hacer las compras"
+            placeholder={loading ? "⌚" : "Hacer las compras"}
             className="TodoSearch"
             value={searchValue}
             onChange={(event) => {
                 setSearchValue(event.target.value);
-            }} />
+            }}
+            disabled={loading}
+        />
     );
 }
 
