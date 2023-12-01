@@ -5,6 +5,7 @@ function useTodos() {
     const {
         item: todos,
         saveItem: saveTodos,
+        synchronizeItem: synchronizeTodos,
         loading,
         error
     } = useLocalStorage('TODOS_V1', []);
@@ -62,7 +63,8 @@ function useTodos() {
             completeTodo,
             deleteTodo,
             openModal,
-            setOpenModal
+            setOpenModal,
+            synchronizeTodos
         }
     );
 }
